@@ -41,28 +41,28 @@ void loop()
  ultrasonic();
  
   
- if (distance>10&&distance<=85)
+ if (distance<=100)
  {
-      OUT1 =map(distance,10,85,0,255);
+      OUT1 =map(distance,0,100,0,255);
    analogWrite(led1,OUT1);
         digitalWrite(led2,0);
 
  }
-  else if (distance>85&&distance<=160)
+  else if (distance>100&&distance<=200)
  {
-      OUT2 =map(distance,85,160,0,255);
+      OUT2 =map(distance,100,200,0,255);
    analogWrite(led2,OUT2);
       digitalWrite(led3,0);
  }
-else if (distance>160&&distance<=235)
+else if (distance>200&&distance<=300)
  {
-      OUT3 =map(distance,160,235,0,255);
+      OUT3 =map(distance,200,300,0,255);
    analogWrite(led3,OUT3);
       digitalWrite(led4,0);
 }
- else if (distance>235&&distance<=300)
+ else if (distance>300)
  {
-      OUT4 =map(distance,235,300,0,255);
+      OUT4 =map(distance,300,400,0,255);
    analogWrite(led4,OUT4);
   }
  
